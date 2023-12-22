@@ -19,6 +19,9 @@ create table payments
 create table payment_providers
 (
     id varchar(36),
+    code varchar(100) not null,
+    name varchar(100) not null,
+    constraint payment_providers_unique_code unique (code),
     primary key (id)
 );
 
