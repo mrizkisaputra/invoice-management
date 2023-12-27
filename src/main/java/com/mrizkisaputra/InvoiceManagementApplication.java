@@ -10,7 +10,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @PropertySources({
 		@PropertySource("classpath:/database.properties")
 })
-@EnableJpaAuditing
 public class InvoiceManagementApplication {
 
 	public static void main(String[] args) {
