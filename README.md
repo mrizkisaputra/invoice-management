@@ -12,6 +12,12 @@ Aplikasi ini dipakai untuk mengelola invoice dan menyambungkan dengan berbagai m
 ### QR Payment
     -   QRIS
 
+### Tipe tagihan yang tersedia:
+
+    * CLOSED : bayar sesuai nominal. Kalau tidak sesuai, ditolak
+    * OPEN : pembayaran berapapun diterima
+    * INSTALLMENT : pembayaran diterima selama total akumulasi lebih kecil atau sama dengan nilai tagihan
+
 ## Cara Setup Database #
 ```shell
     docker run --rm \
@@ -21,6 +27,6 @@ Aplikasi ini dipakai untuk mengelola invoice dan menyambungkan dengan berbagai m
 	-e POSTGRES_PASSWORD=2llXwU0QTR1naUOFQQEnKPIO3M43KMfl \
 	-e POSTGRES_DB=invoicedb \
 	-e PGDATA=/var/lib/postgresql/data/pgdata \
-	-v "$PWD/invoicedb-data:/var/lib/postgresql/data" \
+	-v "$PWD/invoicedb:/var/lib/postgresql/data" \
 	postgres:16
 ```
