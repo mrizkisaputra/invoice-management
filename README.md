@@ -18,6 +18,17 @@ Aplikasi ini dipakai untuk mengelola invoice dan menyambungkan dengan berbagai m
     * OPEN : pembayaran berapapun diterima
     * INSTALLMENT : pembayaran diterima selama total akumulasi lebih kecil atau sama dengan nilai tagihan
 
+Fitur Aplikasi
+
+* Manajemen Debitur
+    * Registrasi Debitur
+    * Rekap Tagihan Debitur
+    * Histori Pembayaran
+* Manajemen Invoice
+    * Membuat Invoice
+    * Mengganti nilai dan tanggal jatuh tempu
+    * Membatalkan invoice
+
 ## Cara Setup Database #
 ```shell
     docker run --rm \

@@ -1,9 +1,6 @@
 package com.mrizkisaputra.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 import org.hibernate.annotations.SQLDelete;
@@ -33,6 +30,15 @@ public class Invoice extends BaseEntity<String> {
     @NotNull @NotBlank @Size(min = 8)
     private String description;
 
+    @NotNull @Min(0)
+    private BigDecimal totalPayment = BigDecimal.ZERO;
+
+    @NotNull @Size(max = 50) @Enumerated(EnumType.STRING)
+    private PaymentStatus paymentStatus;
+
     @ManyToOne @JoinColumn(name = "id_invoice_type")
     private InvoiceType invoiceType;
+
+    @ManyToOne @JoinColumn(name = "id_customer")
+    private Customer customer;
 }
